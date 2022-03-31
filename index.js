@@ -34,7 +34,6 @@ const beyonceHash = {
 const beSongs = beyonceHash.hits;
 const beMovies = beyonceHash.movies;
 
-
 // 1. Print all the songs
 function printAllSongs() {
   let allSongs = beSongs.map(hit => hit.title);
@@ -105,9 +104,9 @@ function fiercestHits() {
 function hitFiercenessSum() {
   let fierceTotal = beSongs.map(hit => hit.fierceness)
   const total = fierceTotal.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
+    return accumulator + currentValue
   });
-  return total;
+  return total
 }
 
 // 14. Return the average fierceness value for all Beyonce's hit songs
@@ -142,7 +141,8 @@ function hitDancerSum() {
 
 // 18. Return an array of Beyonce's hairstyles without repeats
 function uniqueHairstyles() {
-  return [...new Set(besongs.map(hit => hit.hair).reduce((array, hair) => array.concat(hair), []))]
+  return [...new Set(besongs.map(hit => hit.hair).reduce(
+    (array, hair) => array.concat(hair), []))]
 }
 
 // 19. Return an object where the properties are song names and the value is an object which contains that song's fierceness and the average fierceness for all songs
