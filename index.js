@@ -65,7 +65,7 @@ function songsWithBodySuits() {
 
 // 6. Return an array with all of the songs where Beyonce's fierceness is greater than or equal to a given number
 function getSongsByFiercenessGTE() {
-  const greaterFierceness = allFierce.filter(hit => hit.fierceness >= number);
+  const greaterFierceness = beSongs.filter(hit => hit.fierceness >= number);
   return greaterFierceness
 }
 
@@ -119,7 +119,7 @@ function hitFiercenessAverage() {
 // 15. Return the sum of Beyonce's rating value for all of her movies
 function ratingSum() {
   let ratingTotal = beMovies.map(movie => movie.rating)
-  const total = rateTotal.reduce((accumulator, currentValue) => {
+  const total = ratingTotal.reduce((accumulator, currentValue) => {
     return accumulator + currentValue;
   });
   return total
@@ -131,6 +131,11 @@ function ratingAverage() {
 
 // 17. Return the sum of the total number of dancers in all of the hit song videos
 function hitDancerSum() {
+  let dancerTotal = beSongs.map(hit => hit.dancers)
+  const total = dancerTotal.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  });
+  return total;
 }
 
 // 18. Return an array of Beyonce's hairstyles without repeats
@@ -165,4 +170,5 @@ module.exports = {
   hitFiercenessSum,
   hitFiercenessAverage,
   ratingSum,
+  hitDancerSum,
 }
