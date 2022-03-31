@@ -127,6 +127,8 @@ function ratingSum() {
 
 // 16. Return the average rating value for all of her movies
 function ratingAverage() {
+  let ratingAvg = beMovies.map(movie => movie.rating)
+  return ratingAvg() / rateSum.length;
 }
 
 // 17. Return the sum of the total number of dancers in all of the hit song videos
@@ -140,6 +142,7 @@ function hitDancerSum() {
 
 // 18. Return an array of Beyonce's hairstyles without repeats
 function uniqueHairstyles() {
+  return [...new Set(besongs.map(hit => hit.hair).reduce((array, hair) => array.concat(hair), []))]
 }
 
 // 19. Return an object where the properties are song names and the value is an object which contains that song's fierceness and the average fierceness for all songs
@@ -171,4 +174,7 @@ module.exports = {
   hitFiercenessAverage,
   ratingSum,
   hitDancerSum,
+  uniqueHairstyles,
+  ratingAverage,
+
 }
