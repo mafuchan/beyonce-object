@@ -180,27 +180,3 @@ function hairStyleFrequency() {
     }
   })
 }
-
-module.exports = {
-  printAllSongs,
-  printAllMovies,
-  hitSongTitles,
-  allFiercenessRatings,
-  songsWithBodySuits,
-  groupHits,
-  findBlondeHit,
-  sorry,
-  fiercestHits,
-  getSongsByFiercenessGTE,
-  getMoviesByDateGTE,
-  getSong,
-  hitFiercenessSum,
-  hitFiercenessAverage,
-  ratingSum,
-  hitDancerSum,
-  uniqueHairstyles,
-  ratingAverage,
-  movieRatingsByName,
-  songFiercenessByName,
-  hairStyleFrequency,
-}
