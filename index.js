@@ -147,14 +147,38 @@ function uniqueHairstyles() {
 
 // 19. Return an object where the properties are song names and the value is an object which contains that song's fierceness and the average fierceness for all songs
 function songFiercenessByName() {
+  return beSongs.reduce((hit_Object, hit) => {
+    return {
+      ...hit_Object,
+      [hit.title]: {
+        fierceness: hit.fierceness,
+        average_fierceness: hitFiercenessAverage()
+      }
+    }
+  })
 }
 
 // 20. Return an object where the properties are movie names and the value is an object which contains that movie's rating and the average rating for all movies
 function movieRatingsByName() {
+  return beMovies.reduce((movie_Object, movie) => {
+    return {
+      ...movie_Object,
+      [movie.title]: {
+        rating: movie.rating,
+        average_rating: ratingAverage()
+      }
+    }
+  })
 }
 
 // 21. Return an object with Beyonce's hairstyles as the keys and a tally of each hairstyle, eg. `{ "blonde": 3, ... }`
 function hairStyleFrequency() {
+  return uniqueHairstyles().reduce((hair_Object, hair) => {
+    return {
+      ...hair_Object,
+      [hair]: beSongs.map(hit => hit.hair).flat().filter(hairstyle => hairstyle === hair).length
+    }
+  })
 }
 
 module.exports = {
@@ -176,5 +200,7 @@ module.exports = {
   hitDancerSum,
   uniqueHairstyles,
   ratingAverage,
-
+  movieRatingsByName,
+  songFiercenessByName,
+  hairStyleFrequency,
 }
